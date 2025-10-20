@@ -87,6 +87,8 @@ endmodule
 # Restore execute permission
 !chmod +x /content/drive/MyDrive/iverilog-install/bin/iverilog
 !chmod +x /content/drive/MyDrive/iverilog-install/bin/vvp
+!chmod +x /content/drive/MyDrive/iverilog-install/lib/ivl/ivlpp
+!chmod +x /content/drive/MyDrive/iverilog-install/lib/ivl/ivl
 import os
 os.environ['PATH'] += ":/content/drive/MyDrive/iverilog-install/bin"
 !iverilog -V
