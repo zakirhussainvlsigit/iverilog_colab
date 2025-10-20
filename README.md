@@ -9,6 +9,30 @@ drive.mount('/content/drive')
 
 Then:
 
+# Step 1: Update package lists
+!sudo apt-get update -y
+
+# Step 2: Install all required build dependencies
+!sudo apt-get install -y autoconf gperf make gcc g++ bison flex git build-essential automake libtool
+
+# Step 3: Clone the repository
+%cd /content
+!rm -rf iverilog   # clean any old failed build
+!git clone https://github.com/steveicarus/iverilog.git
+
+# Step 4: Build from source
+%cd iverilog
+!chmod +x autoconf.sh
+!sh autoconf.sh
+!./configure
+!make -j$(nproc)
+!sudo make install
+
+# Step 5: Verify
+!iverilog -V
+
+OR
+
 %cd /content/drive/MyDrive
 !git clone https://github.com/steveicarus/iverilog.git
 %cd iverilog
