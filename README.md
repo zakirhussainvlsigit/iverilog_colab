@@ -3,6 +3,16 @@
 Colab sessions reset when you close them or after some idle time.
 👉 If you want to avoid reinstalling every time, clone and install iverilog into your Google Drive once.
 
+## STEP0:
+```
+# Restore execute permission
+!chmod +x /content/drive/MyDrive/iverilog-install/bin/iverilog
+!chmod +x /content/drive/MyDrive/iverilog-install/bin/vvp
+import os
+os.environ['PATH'] += ":/content/drive/MyDrive/iverilog-install/bin"
+!iverilog -V
+```
+
 ## STEP1:
 ```
 from google.colab import drive
