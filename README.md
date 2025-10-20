@@ -24,7 +24,7 @@ Then:
 %cd iverilog
 !chmod +x autoconf.sh
 !sh autoconf.sh
-!./configure
+!./configure --prefix=/content/drive/MyDrive/iverilog-install
 !make -j$(nproc)
 !sudo make install
 
