@@ -6,23 +6,16 @@ Colab sessions reset when you close them or after some idle time.
 from google.colab import drive
 drive.mount('/content/drive')
 
-
-Then:
-
 # Step 1: Update package lists
 !sudo apt-get update -y
 
 # Step 2: Install all required build dependencies
 !sudo apt-get install -y autoconf gperf make gcc g++ bison flex git build-essential automake libtool
 
-# Step 3: Clone the repository
-%cd /content
-!rm -rf iverilog   # clean any old failed build
+# Step 3: Clone the repository and Build from source
+%cd /content/drive/MyDrive
 !git clone https://github.com/steveicarus/iverilog.git
-
-# Step 4: Build from source
 %cd iverilog
-!chmod +x autoconf.sh
 !sh autoconf.sh
 !./configure --prefix=/content/drive/MyDrive/iverilog-install
 !make -j$(nproc)
