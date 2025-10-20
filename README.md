@@ -24,15 +24,6 @@ drive.mount('/content/drive')
 # Step 5: Verify
 !iverilog -V
 
-OR
-
-%cd /content/drive/MyDrive
-!git clone https://github.com/steveicarus/iverilog.git
-%cd iverilog
-!sh autoconf.sh
-!./configure --prefix=/content/drive/MyDrive/iverilog-install
-!make -j$(nproc)
-!make install
 ```
 
 ---
